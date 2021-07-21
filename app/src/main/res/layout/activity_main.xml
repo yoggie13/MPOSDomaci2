@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/AbsoluteLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="209dp"
+        android:layout_x="0dp"
+        android:layout_y="0dp">
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="313dp"
+            android:layout_height="91dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/itcpioneer"
+            android:gravity="center"
+            android:text="Welcome"
+            android:textColor="@color/black"
+            android:textSize="60sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editMovie"
+            android:layout_width="173dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="12dp"
+            android:ems="10"
+            android:fontFamily="@font/roboto"
+            android:hint="Search for a movie"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toStartOf="@+id/btnSrc"
+            app:layout_constraintHorizontal_bias="0.894"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
+
+        <Button
+            android:id="@+id/btnSrc"
+            android:layout_width="57dp"
+            android:layout_height="41dp"
+
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginRight="48dp"
+            android:onClick="search"
+            android:text="ok"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
+
+        <ProgressBar
+            android:id="@+id/prBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="417dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.016"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="417dp"
+        android:layout_y="209dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="180dp"
+            android:layout_height="402dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.777">
+
+            <TextView
+                android:id="@+id/txtName"
+                android:layout_width="160dp"
+                android:layout_height="51dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/border"
+                android:fontFamily="@font/roboto"
+                android:gravity="center"
+                android:hint="Movie name"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtDirector"
+                android:layout_width="160dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/border"
+                android:fontFamily="@font/roboto"
+                android:gravity="center"
+                android:hint="Director"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtName" />
+
+            <TextView
+                android:id="@+id/txtGenre"
+                android:layout_width="160dp"
+                android:layout_height="52dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/border"
+                android:fontFamily="@font/roboto"
+                android:gravity="center"
+                android:hint="Genre"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.608"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtDirector" />
+
+            <TextView
+                android:id="@+id/txtPlot"
+                android:layout_width="160dp"
+                android:layout_height="196dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/border"
+                android:fontFamily="@font/roboto"
+                android:gravity="center"
+                android:hint="Plot"
+                android:scrollbars="vertical"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.65"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtGenre"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/imgPoster"
+            android:layout_width="180dp"
+            android:layout_height="398dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/constraintLayout"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.466"
+            tools:srcCompat="@tools:sample/avatars" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="371dp"
+        android:layout_height="101dp"
+        android:layout_x="20dp"
+        android:layout_y="630dp">
+
+
+        <TextView
+            android:id="@+id/txtRatings"
+            android:layout_width="109dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/border"
+            android:fontFamily="@font/roboto"
+            android:gravity="center"
+            android:text="Ratings"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ListView
+            android:id="@+id/listRatings"
+            android:layout_width="354dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtRatings">
+
+        </ListView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</AbsoluteLayout>
